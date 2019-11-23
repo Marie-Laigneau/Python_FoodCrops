@@ -7,6 +7,8 @@ Created on Wed Oct 23 14:31:35 2019
 @author: 
 """
 
+from enum import Enum
+
 class CommodityGroup(Enum):
     """Énumération des différentes cultures vivières existantes"""
     
@@ -24,4 +26,17 @@ class CommodityGroup(Enum):
     ENERGY_FEEDS         = "energy feeds"
     OTHER                = "other"
 
+
+class Commodity:
+    """Classe définissant les cultures vivières"""
+    
+    def __init__(self, group: CommodityGroup, Id: int, name: str):
+        self.id = Id   # Identifiant numerique de la culture viviere
+        self._name = name   # Description de la culture viviere
+        self.group = group   # Groupe de la culture viviere
+    
+    def describe(self):
+        desc = ", CommodityGroup : " + self.group + ", Commodity_Id : " 
+        + self.id + ", Commodity_Name : " + self._name
+        return desc
 

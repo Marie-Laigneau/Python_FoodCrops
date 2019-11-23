@@ -15,8 +15,9 @@ class Unit(ABC):
         self.id = Id
         self.name = name
 
+#TODO add Describable attribute to sub-classes
 
-class Price(Unit, Describable):
+class Price(Unit):
     """Classe définissant l'unité de mesure : Prix"""
     
     def __init__(self, Id: int):
@@ -27,7 +28,7 @@ class Price(Unit, Describable):
         return desc
 
 
-class Volume(Unit, Describable):
+class Volume(Unit):
     """Classe définissant l'unité de mesure : Volume"""
     
     def __init__(self, Id: int):
@@ -38,7 +39,7 @@ class Volume(Unit, Describable):
         return desc
 
 
-class Weight(Unit, Describable):
+class Weight(Unit):
     """Classe définissant l'unité de mesure : Poids"""
     
     def __init__(self, Id: int, multiplier: float):
@@ -50,7 +51,7 @@ class Weight(Unit, Describable):
         return desc
 
 
-class Surface(Unit, Describable):
+class Surface(Unit):
     """Classe définissant l'unité de mesure : Surface"""
     
     def __init__(self, Id: int):
@@ -61,7 +62,7 @@ class Surface(Unit, Describable):
         return desc
 
 
-class Count(Unit, Describable):
+class Count(Unit):
     """Classe définissant l'unité de mesure : Nombre"""
     
     def __init__(self, Id: int, what: str):
@@ -73,7 +74,7 @@ class Count(Unit, Describable):
         return desc
 
 
-class Ratio(Unit, Describable):
+class Ratio(Unit):
     """Classe définissant l'unité de mesure : Ratio"""
     
     def __init__(self, Id: int):
@@ -84,7 +85,7 @@ class Ratio(Unit, Describable):
         return desc
 
 
-class UnitRatio(Ratio, Describable):
+class UnitRatio(Ratio):
     """Classe définissant l'unité de mesure : UnitRatio"""
 
     def __init__(self, Id: int, unit1: Unit, unit2: Unit):

@@ -14,7 +14,7 @@ import pandas
 class FoodCropsDataset:
     """Classe définissant le point d'entrée du modèle """
     
-    def __init__(self, factory: FoodCropsFactory):
+    def __init__(self, factory: FoodCropFactory):
         self.factory = factory
         self.__commodityGroupMeasurementIndex = {}   # Création du dictionnaire pour la recherche selon les cultures vivieres
         self.__indicatorGroupMeasurementIndex = {}   # Création du dictionnaire pour la recherche selon les indicateurs
@@ -26,30 +26,30 @@ class FoodCropsDataset:
         """Prends le chemin vers le fichier csv et réalise l'ensemble des 
         instanciations du modèle"""
         database = pandas.read_csv(datasetPath)
-        c=0
-        m=0
+        c = 0
+        m = 0
         for index, row in database.iterrows():   # On parcourt le jeu de données ligne par ligne
-            c+=1
-            m==0
-            #groupIndic_Id = row[1]
-            groupIndic_Desc = row[2]
-            #groupCommod_Id = row[3]
-            groupCommod_Desc = row[4]
-            #geogLocation_Id = row[5]
-            #sortOrder = row[6]
-            geogLocation = row[7]
-            commodity_Id = row[8]
-            commodity_Desc = row[9]
-            indicator_Id = row[10]
-            indicator_Desc = row[11]
-            unit_Id = row[12]
-            unit_Desc = row[13]
-            year = row[14]
-            frequency_Id = row[15]
-            frequency_Desc = row[16]
-            timeperiod_Id = row[17]
-            timeperiod_Desc = row[18]
-            amount = row[19]
+            c = c + 1
+            m = 0
+            #groupIndic_Id   = row[0]
+            groupIndic_Desc  = row[1]
+            #groupCommod_Id  = row[2]
+            groupCommod_Desc = row[3]
+            #geogLocation_Id = row[4]
+            #sortOrder       = row[5]
+            geogLocation     = row[6]
+            commodity_Id     = row[7]
+            commodity_Desc   = row[8]
+            indicator_Id     = row[9]
+            indicator_Desc   = row[10]
+            unit_Id          = row[11]
+            unit_Desc        = row[12]
+            year             = row[13]
+            frequency_Id     = row[14]
+            frequency_Desc   = row[15]
+            timeperiod_Id    = row[16]
+            timeperiod_Desc  = row[17]
+            amount           = row[18]
             
             # Pour la creation de l'unite
             if unit_Id == 4 or unit_Id == 5 or unit_Id == 12 or unit_Id == 31:
@@ -58,11 +58,11 @@ class FoodCropsDataset:
                 unit = self.factory.createVolume(unit_Id)
             if unit_Id == 7 or unit_Id == 8 or unit_Id == 9 or unit_Id == 41:
                 if unit_Id == 7 or unit_Id == 9:
-                    m=1000
+                    m = 1000
                 if unit_Id == 8:
-                    m=1000000
+                    m = 1000000
                 if unit_Id == 41:
-                    m=1
+                    m = 1
                 unit = self.factory.createWeight(unit_Id,m)
             if unit_Id == 2 or unit_Id == 10 or unit_Id == 44:
                 unit = self.factory.createSurface(unit_Id)

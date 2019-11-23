@@ -23,7 +23,7 @@ class Indicator:
         self.id = Id #str
         self.frequency = freq #int
         self.frequencyDesc = freqDesc #str
-        self.geoLocation = geoLoc #str
+        self.geoLocation = geogLocation #str
         self.IndicatorGroup = group #Enum: IndicatorGroup
 
     
