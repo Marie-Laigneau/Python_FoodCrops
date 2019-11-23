@@ -147,7 +147,11 @@ class FoodCropsDataset:
         else:
             list4 = self.__locationMeasurementIndex[geographicalLocation.value]
         
-        L = list1.intersection(list2, list3, list4)
+        # on crée une fonction pour chercher l'intersection entre 4 listes
+        def intersection(l1, l2, l3, l4):
+            return list(set(l1) & set(l2) & set(l3) & set(l4))
+
+        L = intersection(list1, list2, list3, list4)
         
         for l in L:
             print(l.describe()+"\n")
