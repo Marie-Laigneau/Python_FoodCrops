@@ -94,6 +94,6 @@ class UnitRatio(Ratio):
         self.__unit2 = unit2
     
     def describe(self):
-        desc = ", Unit : " + self.__unit1.name + " per " + self.__unit2.name
+        desc = ", UnitRatio : " + self.__unit1.name + " per " + self.__unit2.name
         return desc
 

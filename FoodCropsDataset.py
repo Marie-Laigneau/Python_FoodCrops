@@ -124,7 +124,7 @@ class FoodCropsDataset:
         if commodityGroup == None:
             list1 = self.measurementList   # regarder si il est possible de passer directement par la bibliothèque
         else:
-            list1 = self.__commodityGroupMeasurementIndex[commodityGroup.value]
+            list1 = self.__commodityGroupMeasurementIndex[commodityGroup.value.capitalize()]
         
         # On crée une liste comprenant l'ensemble des mesures ayant le meme 
         # groupe d'indicateur que celui recherché
@@ -138,14 +138,14 @@ class FoodCropsDataset:
         if unit == None:
             list3 = self.measurementList
         else:
-            list3 = self.__unitMeasurementIndex[unit.value]
+            list3 = self.__unitMeasurementIndex[unit.name]
         
         # On crée une liste comprenant l'ensemble des mesures ayant la meme 
         # zone geographique que celle recherchée
         if geographicalLocation == None:
             list4 = self.measurementList
         else:
-            list4 = self.__locationMeasurementIndex[geographicalLocation.value]
+            list4 = self.__locationMeasurementIndex[geographicalLocation]
         
         # on crée une fonction pour chercher l'intersection entre 4 listes
         def intersection(l1, l2, l3, l4):
