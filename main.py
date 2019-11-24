@@ -99,6 +99,8 @@ def main():
         elif option == 'help':
             HELPMSG = 'Saisir \'filter\' pour filtrage et \'exit\' pour arrêter'
             print(HELPMSG + '\n')
+        elif option == 'exit':
+            break
         else :
             print('Please enter a valid option, or type \'help\'\n')
 
