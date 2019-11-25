@@ -160,9 +160,9 @@ class FoodCropFactory:
                           timeperiodId: int, timeperiodDesc: str, 
                           commodity: Commodity, indicator: Indicator):
         """Méthode usine de la classe : Measurement"""
-        mtype = MeasurementType(Id, timeperiodDesc)
-        return Measurement(year, value, timeperiodId, timeperiodDesc, 
-                           mtype, commodity, indicator)
+        
+        return Measurement(Id, year, value, timeperiodId, timeperiodDesc, 
+                           commodity, indicator)
 
 
         
