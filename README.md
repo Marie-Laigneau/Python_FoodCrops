@@ -56,3 +56,7 @@ This project aims to implement a program for analysing corps statistics.
 It provides an interface between the database and corresponding Python classes.
 The user is able to view the resulting measurement corresponding to the criterion selected.
 
+## Bonus
+Version 2 (in constant development) :
+https://github.com/Leethine/Python_FoodCrops
+
