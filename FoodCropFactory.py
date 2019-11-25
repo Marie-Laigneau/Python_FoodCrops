@@ -7,10 +7,11 @@ Created on Wed Oct 23 14:31:35 2019
 @author: 
 """
 
-from Units import *
-from Measurement import *
+from Units import Unit, Price, Volume, Weight, Surface, Count, Ratio, UnitRatio
+from Measurement import Measurement
 from Indicator import Indicator, IndicatorGroup
 from Commodity import Commodity, CommodityGroup
+
 
 class FoodCropFactory:
     """Classe permettant de créer de nouvelles instances des classes, de les
