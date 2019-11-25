@@ -6,7 +6,6 @@ Indicator.py
 Creates indicators for a commodity
 @author: 
 """
-
 from FoodCropsDataset import FoodCropsDataset
 from FoodCropFactory import FoodCropFactory
 from Commodity import CommodityGroup
