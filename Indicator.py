@@ -13,13 +13,13 @@ from Describable import Descriptor
 class IndicatorGroup(Enum):
     """Énumération des différents indicateurs existants"""
     
-    EXPORTS_AND_IMPORTS = "Exports and imports"
-    SUPPLY_AND_USE      = "Supply and use"
-    PRICES              = "Prices"
-    FEED_PRICE_RATIOS   = "Feed-price ratios"
-    QUANTITIES_FED      = "Quantities fed"
-    TRANSPORTATION      = "Transportation"
-    ANIMAL_UNIT_INDEXES = "Animal unit indexes"
+    EXPORTS_AND_IMPORTS = "exports and imports"
+    SUPPLY_AND_USE      = "supply and use"
+    PRICES              = "prices"
+    FEED_PRICE_RATIOS   = "feed-price ratios"
+    QUANTITIES_FED      = "quantities fed"
+    TRANSPORTATION      = "transportation"
+    ANIMAL_UNIT_INDEXES = "animal unit indexes"
 
 class Indicator(Descriptor): 
     """Classe définissant les indicateurs (mesures dans certaines unités)"""
