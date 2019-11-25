@@ -8,6 +8,7 @@ Creates measurement class that defines the measurement of a commodity
 
 from Indicator import Indicator
 from Commodity import Commodity
+from Describable import Descriptor
 
 
 class Measurement:
