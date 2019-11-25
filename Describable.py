@@ -7,7 +7,7 @@ Abstract interface for describe method
 
 from abc import ABC, abstractmethod
 
-class Descriptor(ABCMeta):
+class Descriptor(ABC):
     @abstractmethod
     def describe(self):
         desc = self.__class__.__name__
