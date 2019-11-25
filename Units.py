@@ -11,11 +11,8 @@ class Unit(ABC):
     """Classe définissant une unité de mesure"""
     
     def __init__(self, Id: int, name: str):
-        super().__init__()
         self.id = Id
         self.name = name
-
-#TODO add Describable attribute to sub-classes
 
 class Price(Unit):
     """Classe définissant l'unité de mesure : Prix"""
@@ -44,10 +41,10 @@ class Weight(Unit):
     
     def __init__(self, Id: int, multiplier: float):
         Unit.__init__(self, Id, "Weight")
-        self.__multiplier = multiplier   # permet d'indiquer l'ordre de grandeur (Kilo, Mega, …)
+        self._multiplier = multiplier   # permet d'indiquer l'ordre de grandeur (Kilo, Mega, …)
     
     def describe(self):
-        desc = ", Unit : " + self.name + " (" + self.__multiplier + ")"
+        desc = ", Unit : " + self.name + " (" + self._multiplier + ")"
         return desc
 
 
@@ -67,10 +64,10 @@ class Count(Unit):
     
     def __init__(self, Id: int, what: str):
         Unit.__init__(self, Id, "Count")
-        self.__what = what   # permet d'indiquer de quoi on parle (graines, …)
+        self._what = what   # permet d'indiquer de quoi on parle (graines, …)
         
     def describe(self):
-        desc = ", Unit : " + self.name + " (" + self.__what + ")"
+        desc = ", Unit : " + self.name + " (" + self._what + ")"
         return desc
 
 
@@ -90,10 +87,10 @@ class UnitRatio(Ratio):
 
     def __init__(self, Id: int, unit1: Unit, unit2: Unit):
         Ratio.__init__(self, Id)
-        self.__unit1 = unit1
-        self.__unit2 = unit2
+        self._unit1 = unit1
+        self._unit2 = unit2
     
     def describe(self):
-        desc = ", UnitRatio : " + self.__unit1.name + " per " + self.__unit2.name
+        desc = ", UnitRatio : " + self._unit1.name + " per " + self._unit2.name
         return desc
 
