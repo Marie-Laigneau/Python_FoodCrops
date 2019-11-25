@@ -6,7 +6,7 @@ Creates indicators for a commodity
 @author: 
 """
 from enum import Enum
-from Units import *
+from Units import Unit, Price, Volume, Weight, Surface, Count, Ratio, UnitRatio
 from Describable import Descriptor
 
 
