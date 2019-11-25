@@ -17,13 +17,16 @@ class MeasurementType:
 
 class Measurement:
     def __init__(self, year: int, value: float, tId: int, tDesc: str, 
-                 type: MeasurementType, commodity: Commodity, 
+                 mtype: MeasurementType, commodity: Commodity, 
                  indicator: Indicator):
         self.__year = year
         self.__value = value
         self.__timeperiodId = tId
         self.__timeperiodDesc = tDesc
-        self.type = type
+        self.mtype = mtype
         self.commodity = commodity
         self.indicator = indicator
-    
+
+    def describe(self):
+        desc = ", Measurement : " + self.mtype.description
+        return desc
