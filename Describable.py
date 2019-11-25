@@ -5,7 +5,7 @@ Abstract interface for describe method
 @author: 
 """
 
-from ABC import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 class Descriptor(ABCMeta):
     @abstractmethod
