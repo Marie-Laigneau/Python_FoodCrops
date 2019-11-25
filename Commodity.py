@@ -10,6 +10,7 @@ Created on Wed Oct 23 14:31:35 2019
 from enum import Enum
 from Describable import Descriptor
 
+
 class CommodityGroup(Enum):
     """Énumération des différentes cultures vivières existantes"""
     
