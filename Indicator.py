@@ -22,13 +22,13 @@ class IndicatorGroup(Enum):
 class Indicator: 
     """Classe définissant les indicateurs (mesures dans certaines unités)"""
     
-    def __init__(self, Id: int, freq: int, freqDesc: str, 
+    def __init__(self, Id: int, frequency: int, freqDesc: str, 
                  geogLocation: str, group: IndicatorGroup, unit: Unit):
         self.id = Id   # Identifiant numerique de l'indicateur
-        self.frequency = freq   # Identifiant numerique de la frequence de mesure
-        self.frequencyDesc = freqDesc   # Description de la frequence de mesure
-        self.geoLocation = geogLocation   # Description de la zone geographique
-        self.IndicatorGroup = group   # Groupe de l'indicateur (Enum)
+        self._frequency = freq   # Identifiant numerique de la frequence de mesure
+        self._frequencyDesc = freqDesc   # Description de la frequence de mesure
+        self._geogLocation = geogLocation   # Description de la zone geographique
+        self.indicatorGroup = group   # Groupe de l'indicateur (Enum)
         self.unit = unit   # Unite de la mesure
     
     def describe(self):
