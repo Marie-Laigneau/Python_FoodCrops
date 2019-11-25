@@ -12,19 +12,19 @@ from enum import Enum
 class CommodityGroup(Enum):
     """Énumération des différentes cultures vivières existantes"""
     
-    CORN                 = "corn"
-    BARLEY               = "barley"
-    OATS                 = "oats"
-    SORGHUM              = "sorghum"
-    BYPRODUCT_FEEDS      = "byproduct feeds"
-    COARSE_GRAINS        = "coarse grains"
-    HAY                  = "hay"
-    FEED_GRAINS          = "feed grains"
-    ANIMAL_PROTEIN_FEEDS = "animal protein feeds"
-    GRAIN_PROTEIN_FEEDS  = "grain protein feeds"
-    PROCESSED_FEEDS      = "processed feeds"
-    ENERGY_FEEDS         = "energy feeds"
-    OTHER                = "other"
+    CORN                 = "Corn"
+    BARLEY               = "Barley"
+    OATS                 = "Oats"
+    SORGHUM              = "Sorghum"
+    BYPRODUCT_FEEDS      = "Byproduct feeds"
+    COARSE_GRAINS        = "Coarse grains"
+    HAY                  = "Hay"
+    FEED_GRAINS          = "Feed grains"
+    ANIMAL_PROTEIN_FEEDS = "Animal protein feeds"
+    GRAIN_PROTEIN_FEEDS  = "Grain protein feeds"
+    PROCESSED_FEEDS      = "Processed feeds"
+    ENERGY_FEEDS         = "Energy feeds"
+    OILSEED_MEAL_FEEDS   = "Oilseed meal feeds"
 
 
 class Commodity:
@@ -36,7 +36,8 @@ class Commodity:
         self.group = group   # Groupe de la culture viviere
     
     def describe(self):
-        desc = ", CommodityGroup : " + self.group + ", Commodity_Id : " 
-        + self.id + ", Commodity_Name : " + self._name
+        desc = ", CommodityGroup : " + self.group 
+        + ", Commodity_Id : " + self.id 
+        + ", Commodity_Name : " + self._name
         return desc
 
