@@ -19,7 +19,7 @@ class FoodCropFactory:
     
     def __init__(self):
         self.__unitsRegistry = {}   # Création du dictionnaire de la classe Unit
-        self.__indicatorsRegistry = {}   # Création du premier dictionnaire de la classe Indicator (pour la recherche sur les indicateurs)
+        self.__indicatorsRegistry = {}   # Création du dictionnaire de la classe Indicator
         self.__commodityRegistry = {}   # Création du dictionnaire de la classe Commodity
 
     def createVolume(self, Id: int):
