@@ -122,7 +122,7 @@ class FoodCropsDataset:
         # On crée une liste comprenant l'ensemble des mesures ayant le meme 
         # groupe de culture viviere que celui recherché
         if commodityGroup == None:
-            list1 = self.measurementList   # regarder si il est possible de passer directement par la bibliothèque
+            list1 = self.measurementList
         else:
             list1 = self.__commodityGroupMeasurementIndex[commodityGroup.value.capitalize()]
         
