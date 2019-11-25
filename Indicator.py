@@ -7,6 +7,8 @@ Creates indicators for a commodity
 """
 from enum import Enum
 from Units import *
+from Describable import Descriptor
+
 
 class IndicatorGroup(Enum):
     """Énumération des différents indicateurs existants"""
