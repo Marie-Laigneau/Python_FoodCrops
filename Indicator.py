@@ -9,21 +9,33 @@ from enum import Enum
 from Units import *
 
 class IndicatorGroup(Enum):
-    EXPORTS_AND_IMPORTS = "exports and imports"
-    SUPPLY_AND_USE      = "supply and use"
-    PRICES              = "prices"
-    FEED_PRICE_RATIOS   = "feed price ratios"
-    QUANTITIES_FED      = "auqntities fed"
-    TRANSPORTATION      = "transportation"
-    ANIMAL_UNIT_INDEXES = "animal unit indexes"
+    """Énumération des différents indicateurs existants"""
+    
+    EXPORTS_AND_IMPORTS = "Exports and imports"
+    SUPPLY_AND_USE      = "Supply and use"
+    PRICES              = "Prices"
+    FEED_PRICE_RATIOS   = "Feed-price ratios"
+    QUANTITIES_FED      = "Quantities fed"
+    TRANSPORTATION      = "Transportation"
+    ANIMAL_UNIT_INDEXES = "Animal unit indexes"
 
-class Indicator:        
+class Indicator: 
+    """Classe définissant les indicateurs (mesures dans certaines unités)"""
+    
     def __init__(self, Id: int, freq: int, freqDesc: str, 
                  geogLocation: str, group: IndicatorGroup, unit: Unit):
-        self.id = Id #str
-        self.frequency = freq #int
-        self.frequencyDesc = freqDesc #str
-        self.geoLocation = geogLocation #str
-        self.IndicatorGroup = group #Enum: IndicatorGroup
-
+        self.id = Id   # Identifiant numerique de l'indicateur
+        self.frequency = freq   # Identifiant numerique de la frequence de mesure
+        self.frequencyDesc = freqDesc   # Description de la frequence de mesure
+        self.geoLocation = geogLocation   # Description de la zone geographique
+        self.IndicatorGroup = group   # Groupe de l'indicateur (Enum)
+        self.unit = unit   # Unite de la mesure
     
+    def describe(self):
+        desc = ", IndicatorGroup : " + self.indicatorGroup 
+        + ", Indicator_Id : " + self.id 
+        + ", Frequency_Id : " + self._frequency 
+        + ", Frequency : " + self._frequencyDesc 
+        + ", Geographical Location : " + self._geogLocation 
+        + self.unit.describe()
+        return desc
