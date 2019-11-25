@@ -9,24 +9,32 @@ Creates measurement class that defines the measurement of a commodity
 from Indicator import Indicator
 from Commodity import Commodity
 
-class MeasurementType:
-    def __init__(self, Id: int, dscp: str):
-        self.id = Id # <int>
-        self.description = dscp # <str>
-
 
 class Measurement:
-    def __init__(self, year: int, value: float, tId: int, tDesc: str, 
-                 mtype: MeasurementType, commodity: Commodity, 
-                 indicator: Indicator):
-        self.__year = year
-        self.__value = value
-        self.__timeperiodId = tId
-        self.__timeperiodDesc = tDesc
-        self.mtype = mtype
-        self.commodity = commodity
-        self.indicator = indicator
+    """Classe définissant une mesure correspondant à une ligne du jeu de 
+    données"""
+    
+    def __init__(self, Id: int, year: int, value: float, tId: int, tDesc: str, 
+                 commodity: Commodity, indicator: Indicator):
+        """Une mesure est définie par son année, sa valeur, sa périodicité, 
+        la culture vivière concernée, son indicateur de mesure, l'unité de cet 
+        indicateur""" 
+        
+        self.id = Id   # Identifiant numerique de la mesure
+        self._year = year   # Année de la mesure
+        self._value = value   # Valeur numerique de la mesure
+        self._timeperiodId = tId   # Identifiant numerique de la periode de temps couverte
+        self._timeperiodDesc = tDesc   # Description textuelle de la periode
+        self.commodity = commodity   # Culture viviere concernee
+        self.indicator = indicator   # Indicateur de mesure
 
     def describe(self):
-        desc = ", Measurement : " + self.mtype.description
+        desc = "Measurement_Id : " + self.id 
+        + ", Year : " + self._year 
+        + ", Time Period_Id : " + self._timeperiodId 
+        + ", Time Period : " 
+        + self._timeperiodDesc 
+        + self.commodity.describe() 
+        + self.indicator.describe() 
+        + ", Amount : " + self._value
         return desc
