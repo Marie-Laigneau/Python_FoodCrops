@@ -21,7 +21,7 @@ class IndicatorGroup(Enum):
     TRANSPORTATION      = "Transportation"
     ANIMAL_UNIT_INDEXES = "Animal unit indexes"
 
-class Indicator: 
+class Indicator(Descriptor): 
     """Classe définissant les indicateurs (mesures dans certaines unités)"""
     
     def __init__(self, Id: int, frequency: int, freqDesc: str, 
