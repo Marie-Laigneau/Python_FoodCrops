@@ -6,6 +6,7 @@ Creates various unit-classes that inherit Unit class
 @author: 
 """
 from abc import ABC, abstractmethod
+from Describable import Descriptor
 
 class Unit(ABC):
     """Classe définissant une unité de mesure"""
@@ -14,7 +15,7 @@ class Unit(ABC):
         self.id = Id
         self.name = name
 
-class Price(Unit):
+class Price(Unit, Descriptor):
     """Classe définissant l'unité de mesure : Prix"""
     
     def __init__(self, Id: int):
@@ -25,7 +26,7 @@ class Price(Unit):
         return desc
 
 
-class Volume(Unit):
+class Volume(Unit, Descriptor):
     """Classe définissant l'unité de mesure : Volume"""
     
     def __init__(self, Id: int):
@@ -36,7 +37,7 @@ class Volume(Unit):
         return desc
 
 
-class Weight(Unit):
+class Weight(Unit, Descriptor):
     """Classe définissant l'unité de mesure : Poids"""
     
     def __init__(self, Id: int, multiplier: float):
@@ -48,7 +49,7 @@ class Weight(Unit):
         return desc
 
 
-class Surface(Unit):
+class Surface(Unit, Descriptor):
     """Classe définissant l'unité de mesure : Surface"""
     
     def __init__(self, Id: int):
@@ -59,7 +60,7 @@ class Surface(Unit):
         return desc
 
 
-class Count(Unit):
+class Count(Unit, Descriptor):
     """Classe définissant l'unité de mesure : Nombre"""
     
     def __init__(self, Id: int, what: str):
@@ -71,7 +72,7 @@ class Count(Unit):
         return desc
 
 
-class Ratio(Unit):
+class Ratio(Unit, Descriptor):
     """Classe définissant l'unité de mesure : Ratio"""
     
     def __init__(self, Id: int):
@@ -82,7 +83,7 @@ class Ratio(Unit):
         return desc
 
 
-class UnitRatio(Ratio):
+class UnitRatio(Ratio, Descriptor):
     """Classe définissant l'unité de mesure : UnitRatio"""
 
     def __init__(self, Id: int, unit1: Unit, unit2: Unit):
