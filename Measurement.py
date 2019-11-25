@@ -11,7 +11,7 @@ from Commodity import Commodity
 from Describable import Descriptor
 
 
-class Measurement:
+class Measurement(Descriptor):
     """Classe définissant une mesure correspondant à une ligne du jeu de 
     données"""
     
